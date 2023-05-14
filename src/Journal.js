@@ -1,10 +1,47 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import SentimentAnalysis from './JournalOptions/SentimentAnalysis';
 
-function Journal(props) {
+function Journal( props ) {
+  const [journalData, setJournalData] = useState({})
+
+  const handleJournalSubmit = (e) => {
+    e.preventDefault();
+    const text = e.target.elements.text.value;
+    setJournalData({ text });
+  };
+
   const [newJournal, setNewJournal] = useState(true);
   const [isJournalVisible, setJournalVisible] = useState(false);
   const [isTransitioning, setTransitioning] = useState(false);
+  const [isSentiment, setIsSentiment] = useState(true);
+  const [isAdvice, setIsAdvice] = useState(true);
+  const [isInspire, setIsInspire] = useState(true);
+
+  const handleExitAdvice = () => {
+    if (!isTransitioning && isJournalVisible && !isAdvice) {
+    setIsAdvice(!isAdvice);  
+  }
+  }
+
+  const handleExitInspire = () => {
+    if (!isTransitioning && isJournalVisible && !isInspire) {
+    setIsInspire(!isInspire);  
+  }
+  }
+
+  const handleExitSentiment = () => {
+    if (!isTransitioning && isJournalVisible && !isSentiment) {
+    setIsSentiment(!isSentiment);  
+  }
+  }
+
+
+  const handleSentimentAnalysis = () => {
+    if (!isTransitioning && isJournalVisible && isSentiment) {
+      setIsSentiment(!isSentiment);
+    }
+  }
 
   const handleButtonClick = () => {
     if (!isTransitioning && isJournalVisible) {
@@ -50,7 +87,9 @@ function Journal(props) {
           unmountOnExit
           onExited={handleTransitionExited}
         >
-          <div className='Journal'>
+          <form 
+          onSubmit={handleJournalSubmit}
+          className='Journal'>
             <h1 className='Journal_Header'>
               Welcome to Journal it and let it go ~
             </h1>
@@ -58,27 +97,48 @@ function Journal(props) {
               We placed an audio for you to listen, feel free to listen ~
             </h4>
             <textarea
-              spellCheck="false"
+              htmlFor='text'
+              type='text'
+              id='text'
+              name='name'
+              spellCheck="true"
               className='Journal_Paragraph'
-              placeholder='Type about anything that is, was, or will be on your mind.. forget about spelling and/or being correct just let it out and let it go~'
-            ></textarea>
+              placeholder='Type about anything that is, was, or will be on your mind.. then take action and control of your words with the options below'
+            >
+            </textarea>
+               {!isSentiment && (
+              <SentimentAnalysis journalData={journalData}>
+              </SentimentAnalysis>
+            )}
             <div className='Journal_Button_Container'>
               <button className='Journal_Button' onClick={handleButtonClick}>
                 Release ~
               </button>
             </div>
             <div className='Journal_Button_Container'>
-              <button className='Journal_Button'>
-                Analyze Sentiment of Journal ~
+              <button className='Journal_Button'
+              onClick={handleSentimentAnalysis}
+              type="submit"
+              >
+                Positivy Scale ~
+              </button>
+              <button onClick={handleExitSentiment} className='Journal_Button_Coral'>
+                [x]
               </button>
             </div>
             <div className='Journal_Button_Container'>
-              <button className='Journal_Button'>Receive gentle advice</button>
+              <button className='Journal_Button'>Receive gentle advice ~</button>
+              <button onClick={handleExitAdvice} className='Journal_Button_Coral'>
+                [x]
+              </button>
             </div>
             <div className='Journal_Button_Container'>
               <button className='Journal_Button'>Inspire ~</button>
+              <button onClick={handleExitInspire} className='Journal_Button_Coral'>
+                [x]
+              </button>
             </div>
-          </div>
+          </form>
         </CSSTransition>
       </div>
     </>

@@ -8,7 +8,7 @@ body {
 /* Journal */
 
 .Journal {
-    height: 600px;
+    height: 750px;
     width: 500px;
     background-image: linear-gradient(to left, bisque, lightyellow, bisque);
     padding: 2%;
@@ -22,6 +22,7 @@ body {
 .Journal_Container {
     height: 900px;
     display: flex;
+    padding: 4%;
     justify-content: center;
     align-items: center;
 }
@@ -63,6 +64,7 @@ body {
     background-color: transparent;
 }
 
+
 .Journal_Button_Start {
     border: none;
     height: 40px;
@@ -88,6 +90,27 @@ body {
 .Journal_Button:hover {
     box-shadow: none;
     color: cornflowerblue;
+    font-weight: 300;
+    opacity: calc(100);
+}
+
+.Journal_Button_Coral {
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    color: rgb(70, 70, 70);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400px;
+    font-size: 24px;
+    border-radius: 12px;
+    font-family: cursive;
+    font-weight: 700;
+    background-color: transparent;
+}
+
+.Journal_Button_Coral:hover {
+    box-shadow: none;
+    color: coral;
     font-weight: 300;
     opacity: calc(100);
 }
