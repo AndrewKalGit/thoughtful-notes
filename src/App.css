@@ -8,11 +8,11 @@ body {
 /* Journal */
 
 .Journal {
-    height: 750px;
+    height: 67%;
     width: 500px;
     background-image: linear-gradient(to left, bisque, lightyellow, bisque);
     padding: 2%;
-    margin-bottom: 12.5%;
+    margin-bottom: 20%;
     display: flex;
     flex-direction: column;
     opacity: 80%;

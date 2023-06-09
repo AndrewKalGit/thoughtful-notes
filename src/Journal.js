@@ -95,6 +95,9 @@ function Journal( props ) {
             </h1>
             <h4 className='Journal_Sub_Header'>
               We placed an audio for you to listen, feel free to listen ~
+              <br/>
+              Sometimes it's good to have a concrete sense of your feelings. 
+              Click 'Positivity Scale'
             </h4>
             <textarea
               htmlFor='text'
@@ -120,13 +123,13 @@ function Journal( props ) {
               onClick={handleSentimentAnalysis}
               type="submit"
               >
-                Positivy Scale ~
+                Positivity Scale ~
               </button>
               <button onClick={handleExitSentiment} className='Journal_Button_Coral'>
                 [x]
               </button>
             </div>
-            <div className='Journal_Button_Container'>
+            {/* <div className='Journal_Button_Container'>
               <button className='Journal_Button'>Receive gentle advice ~</button>
               <button onClick={handleExitAdvice} className='Journal_Button_Coral'>
                 [x]
@@ -137,7 +140,7 @@ function Journal( props ) {
               <button onClick={handleExitInspire} className='Journal_Button_Coral'>
                 [x]
               </button>
-            </div>
+            </div> */}
           </form>
         </CSSTransition>
       </div>
