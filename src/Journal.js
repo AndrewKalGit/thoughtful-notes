@@ -96,8 +96,9 @@ function Journal( props ) {
             <h4 className='Journal_Sub_Header'>
               We placed an audio for you to listen, feel free to listen ~
               <br/>
+              <br/>
               Sometimes it's good to have a concrete sense of your feelings. 
-              Click 'Positivity Scale'
+              Click 'Positivity Scale' to get the overall sentiment score of your journal entry. 
             </h4>
             <textarea
               htmlFor='text'
