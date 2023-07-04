@@ -129,6 +129,7 @@ function Journal( props ) {
               <button onClick={handleExitSentiment} className='Journal_Button_Coral'>
                 [x]
               </button>
+              Andrew J. Kal copy right 
             </div>
             {/* <div className='Journal_Button_Container'>
               <button className='Journal_Button'>Receive gentle advice ~</button>
