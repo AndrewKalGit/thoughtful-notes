@@ -98,7 +98,7 @@ function Journal( props ) {
               <br/>
               <br/>
               Sometimes it's good to have a concrete sense of your feelings. 
-              Click 'Positivity Scale' to get the overall sentiment score of your journal entry. 
+              Click '[Click to see Sentiment Score]' to get the overall sentiment score of your journal entry. 
             </h4>
             <textarea
               htmlFor='text'
