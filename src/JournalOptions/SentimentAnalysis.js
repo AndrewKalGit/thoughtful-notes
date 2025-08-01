@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 function SentimentAnalysis ({ journalData }) {
 
 const Sentiment = require('sentiment');
 const sentiment = new Sentiment();
 const result = sentiment.analyze(journalData.text);    
-
+    
+  const handleButtonClick = () => {
+    if (!isTransitioning && isJournalVisible) {
+      setJournalVisible(false);
+      setTransitioning(true);
+    }
+  };
+    
     return (
         <>
             <h5>
@@ -17,6 +25,9 @@ const result = sentiment.analyze(journalData.text);
             <p className="journalData">
                 Score: {result.score}
             </p>
+            <button className='Journal_Button' onClick={handleButtonClick}>
+                Release ~
+              </button>
         </>
     );
 }
