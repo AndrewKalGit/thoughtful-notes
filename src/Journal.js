@@ -114,21 +114,21 @@ function Journal( props ) {
               <SentimentAnalysis journalData={journalData}>
               </SentimentAnalysis>
             )}
-            <div className='Journal_Button_Container'>
+{*/     <div className='Journal_Button_Container'>
               <button className='Journal_Button' onClick={handleButtonClick}>
                 Release ~
-              </button>
-            </div>
+              </button> 
+            </div>  */}
             <div className='Journal_Button_Container'>
               <button className='Journal_Button'
               onClick={handleSentimentAnalysis}
               type="submit"
               >
-                Positivity Scale ~
+               [Click to see Sentiment Score]
               </button>
-              <button onClick={handleExitSentiment} className='Journal_Button_Coral'>
+{*/ <button onClick={handleExitSentiment} className='Journal_Button_Coral'>
                 [x]
-              </button>
+              </button>  */}
               Andrew J. Kal 
             </div>
             {/* <div className='Journal_Button_Container'>
