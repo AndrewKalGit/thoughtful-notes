@@ -14,6 +14,12 @@ const result = sentiment.analyze(journalData.text);
     }
   };
     
+  const handleExitSentiment = () => {
+    if (!isTransitioning && isJournalVisible && !isSentiment) {
+    setIsSentiment(!isSentiment);  
+  }
+  }
+    
     return (
         <>
             <h5>
@@ -27,6 +33,9 @@ const result = sentiment.analyze(journalData.text);
             </p>
             <button className='Journal_Button' onClick={handleButtonClick}>
                 Release ~
+              </button>
+                <button onClick={handleExitSentiment} className='Journal_Button_Coral'>
+                Write again or more
               </button>
         </>
     );
