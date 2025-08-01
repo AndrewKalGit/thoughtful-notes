@@ -111,10 +111,9 @@ function Journal( props ) {
             >
             </textarea>
                {!isSentiment && (
-                <div className="journalData">
                  <SentimentAnalysis journalData={journalData}>
               </SentimentAnalysis>
-                 </div>
+
             )}
             <div className='Journal_Button_Container'>
               <button className='Journal_Button'
