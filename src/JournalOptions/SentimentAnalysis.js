@@ -14,7 +14,7 @@ const result = sentiment.analyze(journalData.text);
             <p>
                 <strong> '0' is neutral, negative numbers are negative and positive numbers are positive </strong>
             </p>
-            <p>
+            <p className="journalData">
                 Score: {result.score}
             </p>
         </>
