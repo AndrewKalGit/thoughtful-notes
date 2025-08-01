@@ -120,6 +120,16 @@ body {
     justify-content: center;
 }
 
+/* Journal Data */
+
+.journalData {
+    font-size: 40px;
+    font-weight: 400px;
+    background-color: aliceblue;
+    padding: 12px;
+    border-radius: 12px;
+}
+
 /* Buttons */
 
 .fade-enter {
